@@ -1,0 +1,5711 @@
+id,cwe,cwe_name,label,code
+VULN-CWE120-001,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_0(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-001,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_0(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-001,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_0(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-001,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_0(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-002,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_1(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-002,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_1(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-002,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_1(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-002,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_1(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-003,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_2(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-003,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_2(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-003,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_2(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-003,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_2(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-004,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_3(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-004,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_3(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-004,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_3(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-004,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_3(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-005,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_4(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-005,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_4(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-005,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_4(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-005,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_4(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-006,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_5(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-006,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_5(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-006,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_5(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-006,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_5(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-007,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_6(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-007,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_6(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-007,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_6(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-007,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_6(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-008,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_7(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-008,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_7(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-008,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_7(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-008,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_7(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-009,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_8(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-009,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_8(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-009,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_8(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-009,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_8(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-010,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_9(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-010,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_9(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-010,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_9(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-010,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_9(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-011,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_10(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-011,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_10(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-011,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_10(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-011,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_10(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-012,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_11(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-012,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_11(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-012,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_11(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-012,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_11(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-013,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_12(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-013,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_12(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-013,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_12(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-013,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_12(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-014,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_13(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-014,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_13(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-014,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_13(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-014,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_13(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-015,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_14(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-015,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_14(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-015,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_14(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-015,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_14(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-016,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_15(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-016,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_15(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-016,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_15(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-016,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_15(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-017,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_16(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-017,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_16(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-017,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_16(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-017,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_16(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-018,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_17(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-018,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_17(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-018,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_17(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-018,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_17(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-019,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_18(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-019,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_18(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-019,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_18(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-019,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_18(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-020,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_19(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-020,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_19(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-020,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_19(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-020,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_19(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-021,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_20(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-021,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_20(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-021,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_20(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-021,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_20(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-022,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_21(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-022,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_21(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-022,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_21(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-022,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_21(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-023,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_22(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-023,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_22(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-023,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_22(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-023,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_22(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-024,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_23(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-024,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_23(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-024,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_23(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-024,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_23(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-025,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_24(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-025,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_24(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-025,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_24(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-025,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_24(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-026,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_25(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-026,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_25(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-026,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_25(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-026,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_25(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-027,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_26(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-027,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_26(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-027,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_26(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-027,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_26(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-028,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_27(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-028,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_27(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-028,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_27(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-028,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_27(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-029,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_28(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-029,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_28(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-029,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_28(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-029,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_28(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-030,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_29(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-030,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_29(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-030,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_29(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-030,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_29(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-031,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_30(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-031,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_30(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-031,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_30(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-031,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_30(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-032,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_31(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-032,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_31(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-032,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_31(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-032,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_31(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-033,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_32(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-033,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_32(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-033,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_32(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-033,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_32(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-034,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_33(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-034,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_33(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-034,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_33(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-034,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_33(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-035,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_34(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-035,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_34(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-035,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_34(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-035,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_34(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-036,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_35(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-036,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_35(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-036,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_35(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-036,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_35(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-037,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_36(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-037,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_36(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-037,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_36(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-037,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_36(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-038,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_37(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-038,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_37(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-038,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_37(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-038,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_37(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-039,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_38(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-039,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_38(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-039,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_38(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-039,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_38(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-040,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_39(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-040,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_39(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-040,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_39(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-040,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_39(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-041,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_40(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-041,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_40(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-041,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_40(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-041,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_40(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-042,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_41(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-042,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_41(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-042,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_41(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-042,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_41(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-043,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_42(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-043,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_42(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-043,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_42(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-043,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_42(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-044,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_43(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-044,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_43(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-044,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_43(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-044,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_43(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-045,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_44(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-045,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_44(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-045,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_44(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-045,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_44(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-046,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_45(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-046,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_45(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-046,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_45(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-046,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_45(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-047,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_46(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-047,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_46(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-047,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_46(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-047,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_46(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-048,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_47(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-048,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_47(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-048,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_47(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-048,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_47(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-049,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_48(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-049,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_48(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-049,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_48(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-049,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_48(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-CWE120-050,CWE-120,Buffer Copy without Checking Size of Input,1,"
+void process_user_input_49(const char *input) {
+    char buffer[128];
+    // Unbounded string copy vulnerability
+    strcpy(buffer, input);
+    printf(""User input: %s\n"", buffer);
+}
+"
+VULN-CWE122-050,CWE-122,Heap-based Buffer Overflow,1,"
+char* allocate_and_copy_49(const char *src, int len) {
+    char *dest = (char*)malloc(100);
+    // Unchecked heap copy with potential overflow
+    for (int j = 0; j < len; j++) {
+        dest[j] = src[j];
+    }
+    return dest;
+}
+"
+SEC-CWE120-050,CWE-120,Secure Bounded String Copy,0,"
+void process_user_input_safe_49(const char *input) {
+    char buffer[128];
+    if (input == NULL) return;
+    // Safe bounded string copy
+    strncpy(buffer, input, sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';
+    printf(""User input: %s\n"", buffer);
+}
+"
+SEC-CWE122-050,CWE-122,Secure Heap Allocation with Bounds Check,0,"
+char* allocate_and_copy_safe_49(const char *src, size_t len) {
+    if (src == NULL || len == 0 || len > 4096) return NULL;
+    char *dest = (char*)malloc(len + 1);
+    if (dest == NULL) return NULL;
+    memcpy(dest, src, len);
+    dest[len] = '\0';
+    return dest;
+}
+"
+VULN-SUBTLE-120-001,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_0(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-001,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_0(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-002,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_1(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-002,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_1(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-003,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_2(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-003,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_2(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-004,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_3(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-004,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_3(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-005,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_4(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-005,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_4(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-006,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_5(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-006,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_5(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-007,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_6(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-007,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_6(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-008,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_7(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-008,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_7(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-009,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_8(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-009,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_8(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-010,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_9(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-010,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_9(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-011,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_10(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-011,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_10(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-012,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_11(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-012,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_11(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-013,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_12(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-013,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_12(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-014,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_13(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-014,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_13(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-015,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_14(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-015,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_14(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-016,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_15(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-016,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_15(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-017,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_16(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-017,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_16(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-018,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_17(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-018,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_17(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-019,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_18(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-019,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_18(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-SUBTLE-120-020,CWE-120,Off-by-one Buffer Overflow,1,"
+void parse_header_field_19(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    // Off-by-one error: <= instead of < allows writing past buffer end
+    if (hdr_len <= sizeof(local_buf)) {
+        memcpy(local_buf, hdr, hdr_len);
+    }
+}
+"
+SEC-SUBTLE-120-020,CWE-120,Safe Macro String Copy,0,"
+void parse_header_field_safe_19(const char *hdr, size_t hdr_len) {
+    char local_buf[64];
+    size_t copy_len = (hdr_len < sizeof(local_buf)) ? hdr_len : (sizeof(local_buf) - 1);
+    memcpy(local_buf, hdr, copy_len);
+    local_buf[copy_len] = '\0';
+}
+"
+VULN-CWE416-001,CWE-416,Use After Free,1,"
+struct Session_0* create_and_cleanup_0() {
+    struct Session_0 *s = (struct Session_0*)malloc(sizeof(struct Session_0));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 0;
+    return s;
+}
+"
+SEC-CWE416-001,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_0(struct Session_0 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-002,CWE-416,Use After Free,1,"
+struct Session_1* create_and_cleanup_1() {
+    struct Session_1 *s = (struct Session_1*)malloc(sizeof(struct Session_1));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 1;
+    return s;
+}
+"
+SEC-CWE416-002,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_1(struct Session_1 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-003,CWE-416,Use After Free,1,"
+struct Session_2* create_and_cleanup_2() {
+    struct Session_2 *s = (struct Session_2*)malloc(sizeof(struct Session_2));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 2;
+    return s;
+}
+"
+SEC-CWE416-003,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_2(struct Session_2 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-004,CWE-416,Use After Free,1,"
+struct Session_3* create_and_cleanup_3() {
+    struct Session_3 *s = (struct Session_3*)malloc(sizeof(struct Session_3));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 3;
+    return s;
+}
+"
+SEC-CWE416-004,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_3(struct Session_3 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-005,CWE-416,Use After Free,1,"
+struct Session_4* create_and_cleanup_4() {
+    struct Session_4 *s = (struct Session_4*)malloc(sizeof(struct Session_4));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 4;
+    return s;
+}
+"
+SEC-CWE416-005,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_4(struct Session_4 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-006,CWE-416,Use After Free,1,"
+struct Session_5* create_and_cleanup_5() {
+    struct Session_5 *s = (struct Session_5*)malloc(sizeof(struct Session_5));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 5;
+    return s;
+}
+"
+SEC-CWE416-006,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_5(struct Session_5 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-007,CWE-416,Use After Free,1,"
+struct Session_6* create_and_cleanup_6() {
+    struct Session_6 *s = (struct Session_6*)malloc(sizeof(struct Session_6));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 6;
+    return s;
+}
+"
+SEC-CWE416-007,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_6(struct Session_6 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-008,CWE-416,Use After Free,1,"
+struct Session_7* create_and_cleanup_7() {
+    struct Session_7 *s = (struct Session_7*)malloc(sizeof(struct Session_7));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 7;
+    return s;
+}
+"
+SEC-CWE416-008,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_7(struct Session_7 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-009,CWE-416,Use After Free,1,"
+struct Session_8* create_and_cleanup_8() {
+    struct Session_8 *s = (struct Session_8*)malloc(sizeof(struct Session_8));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 8;
+    return s;
+}
+"
+SEC-CWE416-009,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_8(struct Session_8 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-010,CWE-416,Use After Free,1,"
+struct Session_9* create_and_cleanup_9() {
+    struct Session_9 *s = (struct Session_9*)malloc(sizeof(struct Session_9));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 9;
+    return s;
+}
+"
+SEC-CWE416-010,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_9(struct Session_9 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-011,CWE-416,Use After Free,1,"
+struct Session_10* create_and_cleanup_10() {
+    struct Session_10 *s = (struct Session_10*)malloc(sizeof(struct Session_10));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 10;
+    return s;
+}
+"
+SEC-CWE416-011,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_10(struct Session_10 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-012,CWE-416,Use After Free,1,"
+struct Session_11* create_and_cleanup_11() {
+    struct Session_11 *s = (struct Session_11*)malloc(sizeof(struct Session_11));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 11;
+    return s;
+}
+"
+SEC-CWE416-012,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_11(struct Session_11 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-013,CWE-416,Use After Free,1,"
+struct Session_12* create_and_cleanup_12() {
+    struct Session_12 *s = (struct Session_12*)malloc(sizeof(struct Session_12));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 12;
+    return s;
+}
+"
+SEC-CWE416-013,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_12(struct Session_12 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-014,CWE-416,Use After Free,1,"
+struct Session_13* create_and_cleanup_13() {
+    struct Session_13 *s = (struct Session_13*)malloc(sizeof(struct Session_13));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 13;
+    return s;
+}
+"
+SEC-CWE416-014,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_13(struct Session_13 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-015,CWE-416,Use After Free,1,"
+struct Session_14* create_and_cleanup_14() {
+    struct Session_14 *s = (struct Session_14*)malloc(sizeof(struct Session_14));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 14;
+    return s;
+}
+"
+SEC-CWE416-015,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_14(struct Session_14 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-016,CWE-416,Use After Free,1,"
+struct Session_15* create_and_cleanup_15() {
+    struct Session_15 *s = (struct Session_15*)malloc(sizeof(struct Session_15));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 15;
+    return s;
+}
+"
+SEC-CWE416-016,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_15(struct Session_15 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-017,CWE-416,Use After Free,1,"
+struct Session_16* create_and_cleanup_16() {
+    struct Session_16 *s = (struct Session_16*)malloc(sizeof(struct Session_16));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 16;
+    return s;
+}
+"
+SEC-CWE416-017,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_16(struct Session_16 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-018,CWE-416,Use After Free,1,"
+struct Session_17* create_and_cleanup_17() {
+    struct Session_17 *s = (struct Session_17*)malloc(sizeof(struct Session_17));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 17;
+    return s;
+}
+"
+SEC-CWE416-018,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_17(struct Session_17 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-019,CWE-416,Use After Free,1,"
+struct Session_18* create_and_cleanup_18() {
+    struct Session_18 *s = (struct Session_18*)malloc(sizeof(struct Session_18));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 18;
+    return s;
+}
+"
+SEC-CWE416-019,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_18(struct Session_18 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-020,CWE-416,Use After Free,1,"
+struct Session_19* create_and_cleanup_19() {
+    struct Session_19 *s = (struct Session_19*)malloc(sizeof(struct Session_19));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 19;
+    return s;
+}
+"
+SEC-CWE416-020,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_19(struct Session_19 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-021,CWE-416,Use After Free,1,"
+struct Session_20* create_and_cleanup_20() {
+    struct Session_20 *s = (struct Session_20*)malloc(sizeof(struct Session_20));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 20;
+    return s;
+}
+"
+SEC-CWE416-021,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_20(struct Session_20 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-022,CWE-416,Use After Free,1,"
+struct Session_21* create_and_cleanup_21() {
+    struct Session_21 *s = (struct Session_21*)malloc(sizeof(struct Session_21));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 21;
+    return s;
+}
+"
+SEC-CWE416-022,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_21(struct Session_21 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-023,CWE-416,Use After Free,1,"
+struct Session_22* create_and_cleanup_22() {
+    struct Session_22 *s = (struct Session_22*)malloc(sizeof(struct Session_22));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 22;
+    return s;
+}
+"
+SEC-CWE416-023,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_22(struct Session_22 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-024,CWE-416,Use After Free,1,"
+struct Session_23* create_and_cleanup_23() {
+    struct Session_23 *s = (struct Session_23*)malloc(sizeof(struct Session_23));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 23;
+    return s;
+}
+"
+SEC-CWE416-024,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_23(struct Session_23 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-025,CWE-416,Use After Free,1,"
+struct Session_24* create_and_cleanup_24() {
+    struct Session_24 *s = (struct Session_24*)malloc(sizeof(struct Session_24));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 24;
+    return s;
+}
+"
+SEC-CWE416-025,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_24(struct Session_24 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-026,CWE-416,Use After Free,1,"
+struct Session_25* create_and_cleanup_25() {
+    struct Session_25 *s = (struct Session_25*)malloc(sizeof(struct Session_25));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 25;
+    return s;
+}
+"
+SEC-CWE416-026,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_25(struct Session_25 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-027,CWE-416,Use After Free,1,"
+struct Session_26* create_and_cleanup_26() {
+    struct Session_26 *s = (struct Session_26*)malloc(sizeof(struct Session_26));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 26;
+    return s;
+}
+"
+SEC-CWE416-027,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_26(struct Session_26 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-028,CWE-416,Use After Free,1,"
+struct Session_27* create_and_cleanup_27() {
+    struct Session_27 *s = (struct Session_27*)malloc(sizeof(struct Session_27));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 27;
+    return s;
+}
+"
+SEC-CWE416-028,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_27(struct Session_27 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-029,CWE-416,Use After Free,1,"
+struct Session_28* create_and_cleanup_28() {
+    struct Session_28 *s = (struct Session_28*)malloc(sizeof(struct Session_28));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 28;
+    return s;
+}
+"
+SEC-CWE416-029,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_28(struct Session_28 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-030,CWE-416,Use After Free,1,"
+struct Session_29* create_and_cleanup_29() {
+    struct Session_29 *s = (struct Session_29*)malloc(sizeof(struct Session_29));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 29;
+    return s;
+}
+"
+SEC-CWE416-030,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_29(struct Session_29 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-031,CWE-416,Use After Free,1,"
+struct Session_30* create_and_cleanup_30() {
+    struct Session_30 *s = (struct Session_30*)malloc(sizeof(struct Session_30));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 30;
+    return s;
+}
+"
+SEC-CWE416-031,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_30(struct Session_30 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-032,CWE-416,Use After Free,1,"
+struct Session_31* create_and_cleanup_31() {
+    struct Session_31 *s = (struct Session_31*)malloc(sizeof(struct Session_31));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 31;
+    return s;
+}
+"
+SEC-CWE416-032,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_31(struct Session_31 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-033,CWE-416,Use After Free,1,"
+struct Session_32* create_and_cleanup_32() {
+    struct Session_32 *s = (struct Session_32*)malloc(sizeof(struct Session_32));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 32;
+    return s;
+}
+"
+SEC-CWE416-033,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_32(struct Session_32 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-034,CWE-416,Use After Free,1,"
+struct Session_33* create_and_cleanup_33() {
+    struct Session_33 *s = (struct Session_33*)malloc(sizeof(struct Session_33));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 33;
+    return s;
+}
+"
+SEC-CWE416-034,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_33(struct Session_33 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-035,CWE-416,Use After Free,1,"
+struct Session_34* create_and_cleanup_34() {
+    struct Session_34 *s = (struct Session_34*)malloc(sizeof(struct Session_34));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 34;
+    return s;
+}
+"
+SEC-CWE416-035,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_34(struct Session_34 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-036,CWE-416,Use After Free,1,"
+struct Session_35* create_and_cleanup_35() {
+    struct Session_35 *s = (struct Session_35*)malloc(sizeof(struct Session_35));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 35;
+    return s;
+}
+"
+SEC-CWE416-036,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_35(struct Session_35 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-037,CWE-416,Use After Free,1,"
+struct Session_36* create_and_cleanup_36() {
+    struct Session_36 *s = (struct Session_36*)malloc(sizeof(struct Session_36));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 36;
+    return s;
+}
+"
+SEC-CWE416-037,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_36(struct Session_36 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-038,CWE-416,Use After Free,1,"
+struct Session_37* create_and_cleanup_37() {
+    struct Session_37 *s = (struct Session_37*)malloc(sizeof(struct Session_37));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 37;
+    return s;
+}
+"
+SEC-CWE416-038,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_37(struct Session_37 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-039,CWE-416,Use After Free,1,"
+struct Session_38* create_and_cleanup_38() {
+    struct Session_38 *s = (struct Session_38*)malloc(sizeof(struct Session_38));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 38;
+    return s;
+}
+"
+SEC-CWE416-039,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_38(struct Session_38 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-CWE416-040,CWE-416,Use After Free,1,"
+struct Session_39* create_and_cleanup_39() {
+    struct Session_39 *s = (struct Session_39*)malloc(sizeof(struct Session_39));
+    free(s);
+    // Dangling pointer dereference after free
+    s->id = 39;
+    return s;
+}
+"
+SEC-CWE416-040,CWE-416,Safe Free and Reset Pointer,0,"
+void cleanup_session_safe_39(struct Session_39 **s_ptr) {
+    if (s_ptr == NULL || *s_ptr == NULL) return;
+    free(*s_ptr);
+    *s_ptr = NULL; // Prevent dangling pointer
+}
+"
+VULN-SUBTLE-416-001,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_0(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-001,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_0(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-002,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_1(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-002,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_1(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-003,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_2(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-003,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_2(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-004,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_3(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-004,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_3(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-005,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_4(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-005,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_4(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-006,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_5(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-006,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_5(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-007,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_6(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-007,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_6(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-008,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_7(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-008,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_7(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-009,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_8(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-009,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_8(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-010,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_9(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-010,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_9(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-011,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_10(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-011,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_10(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-012,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_11(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-012,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_11(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-013,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_12(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-013,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_12(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-014,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_13(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-014,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_13(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-SUBTLE-416-015,CWE-416,Use-After-Free in Error Handler,1,"
+int handle_connection_event_14(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (err_code != 0) {
+        free(msg);
+    }
+    // Accessing msg after conditional free
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    return 0;
+}
+"
+SEC-SUBTLE-416-015,CWE-416,Safe Clean Error Handling,0,"
+int handle_connection_event_safe_14(void *ctx, int err_code) {
+    char *msg = (char*)malloc(128);
+    if (msg == NULL) return -1;
+    if (err_code != 0) {
+        free(msg);
+        msg = NULL;
+        return err_code;
+    }
+    snprintf(msg, 128, ""Event processed: %d"", err_code);
+    free(msg);
+    msg = NULL;
+    return 0;
+}
+"
+VULN-CWE415-001,CWE-415,Double Free,1,"
+void double_free_func_0(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-001,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_0(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-002,CWE-415,Double Free,1,"
+void double_free_func_1(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-002,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_1(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-003,CWE-415,Double Free,1,"
+void double_free_func_2(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-003,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_2(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-004,CWE-415,Double Free,1,"
+void double_free_func_3(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-004,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_3(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-005,CWE-415,Double Free,1,"
+void double_free_func_4(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-005,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_4(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-006,CWE-415,Double Free,1,"
+void double_free_func_5(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-006,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_5(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-007,CWE-415,Double Free,1,"
+void double_free_func_6(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-007,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_6(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-008,CWE-415,Double Free,1,"
+void double_free_func_7(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-008,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_7(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-009,CWE-415,Double Free,1,"
+void double_free_func_8(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-009,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_8(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-010,CWE-415,Double Free,1,"
+void double_free_func_9(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-010,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_9(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-011,CWE-415,Double Free,1,"
+void double_free_func_10(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-011,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_10(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-012,CWE-415,Double Free,1,"
+void double_free_func_11(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-012,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_11(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-013,CWE-415,Double Free,1,"
+void double_free_func_12(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-013,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_12(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-014,CWE-415,Double Free,1,"
+void double_free_func_13(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-014,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_13(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-015,CWE-415,Double Free,1,"
+void double_free_func_14(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-015,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_14(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-016,CWE-415,Double Free,1,"
+void double_free_func_15(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-016,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_15(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-017,CWE-415,Double Free,1,"
+void double_free_func_16(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-017,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_16(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-018,CWE-415,Double Free,1,"
+void double_free_func_17(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-018,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_17(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-019,CWE-415,Double Free,1,"
+void double_free_func_18(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-019,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_18(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-020,CWE-415,Double Free,1,"
+void double_free_func_19(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-020,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_19(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-021,CWE-415,Double Free,1,"
+void double_free_func_20(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-021,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_20(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-022,CWE-415,Double Free,1,"
+void double_free_func_21(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-022,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_21(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-023,CWE-415,Double Free,1,"
+void double_free_func_22(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-023,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_22(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-024,CWE-415,Double Free,1,"
+void double_free_func_23(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-024,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_23(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-025,CWE-415,Double Free,1,"
+void double_free_func_24(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-025,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_24(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-026,CWE-415,Double Free,1,"
+void double_free_func_25(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-026,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_25(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-027,CWE-415,Double Free,1,"
+void double_free_func_26(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-027,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_26(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-028,CWE-415,Double Free,1,"
+void double_free_func_27(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-028,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_27(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-029,CWE-415,Double Free,1,"
+void double_free_func_28(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-029,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_28(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-030,CWE-415,Double Free,1,"
+void double_free_func_29(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-030,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_29(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-031,CWE-415,Double Free,1,"
+void double_free_func_30(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-031,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_30(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-032,CWE-415,Double Free,1,"
+void double_free_func_31(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-032,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_31(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-033,CWE-415,Double Free,1,"
+void double_free_func_32(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-033,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_32(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-034,CWE-415,Double Free,1,"
+void double_free_func_33(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-034,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_33(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE415-035,CWE-415,Double Free,1,"
+void double_free_func_34(char *ptr, int flag) {
+    if (flag) {
+        free(ptr);
+    }
+    // Unchecked second free call
+    free(ptr);
+}
+"
+SEC-CWE415-035,CWE-415,Safe Single Free with Null Check,0,"
+void safe_free_func_34(char **ptr_ref) {
+    if (ptr_ref != NULL && *ptr_ref != NULL) {
+        free(*ptr_ref);
+        *ptr_ref = NULL;
+    }
+}
+"
+VULN-CWE476-001,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_0(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-001,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_0(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-002,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_1(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-002,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_1(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-003,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_2(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-003,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_2(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-004,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_3(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-004,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_3(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-005,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_4(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-005,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_4(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-006,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_5(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-006,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_5(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-007,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_6(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-007,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_6(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-008,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_7(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-008,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_7(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-009,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_8(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-009,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_8(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-010,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_9(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-010,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_9(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-011,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_10(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-011,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_10(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-012,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_11(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-012,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_11(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-013,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_12(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-013,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_12(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-014,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_13(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-014,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_13(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-015,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_14(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-015,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_14(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-016,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_15(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-016,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_15(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-017,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_16(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-017,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_16(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-018,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_17(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-018,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_17(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-019,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_18(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-019,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_18(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-020,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_19(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-020,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_19(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-021,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_20(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-021,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_20(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-022,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_21(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-022,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_21(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-023,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_22(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-023,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_22(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-024,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_23(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-024,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_23(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-025,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_24(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-025,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_24(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-026,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_25(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-026,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_25(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-027,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_26(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-027,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_26(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-028,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_27(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-028,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_27(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-029,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_28(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-029,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_28(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-030,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_29(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-030,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_29(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-031,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_30(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-031,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_30(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-032,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_31(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-032,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_31(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-033,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_32(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-033,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_32(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-034,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_33(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-034,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_33(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-035,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_34(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-035,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_34(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-036,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_35(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-036,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_35(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-037,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_36(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-037,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_36(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-038,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_37(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-038,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_37(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-039,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_38(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-039,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_38(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE476-040,CWE-476,NULL Pointer Dereference,1,"
+int get_length_unsafe_39(const char *str) {
+    // Dereferencing pointer without NULL check
+    return strlen(str);
+}
+"
+SEC-CWE476-040,CWE-476,Safe NULL Pointer Validation,0,"
+int get_length_safe_39(const char *str) {
+    if (str == NULL) return 0;
+    return strlen(str);
+}
+"
+VULN-CWE78-001,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_0(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-001,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_0(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-002,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_1(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-002,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_1(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-003,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_2(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-003,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_2(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-004,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_3(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-004,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_3(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-005,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_4(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-005,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_4(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-006,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_5(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-006,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_5(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-007,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_6(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-007,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_6(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-008,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_7(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-008,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_7(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-009,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_8(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-009,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_8(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-010,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_9(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-010,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_9(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-011,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_10(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-011,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_10(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-012,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_11(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-012,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_11(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-013,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_12(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-013,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_12(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-014,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_13(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-014,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_13(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-015,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_14(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-015,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_14(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-016,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_15(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-016,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_15(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-017,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_16(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-017,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_16(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-018,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_17(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-018,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_17(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-019,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_18(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-019,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_18(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-020,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_19(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-020,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_19(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-021,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_20(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-021,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_20(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-022,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_21(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-022,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_21(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-023,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_22(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-023,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_22(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-024,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_23(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-024,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_23(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-025,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_24(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-025,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_24(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-026,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_25(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-026,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_25(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-027,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_26(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-027,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_26(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-028,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_27(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-028,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_27(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-029,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_28(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-029,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_28(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-030,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_29(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-030,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_29(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-031,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_30(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-031,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_30(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-032,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_31(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-032,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_31(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-033,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_32(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-033,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_32(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-034,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_33(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-034,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_33(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE78-035,CWE-78,Improper Neutralization of Special Elements used in an OS Command,1,"
+void run_system_cmd_34(const char *filename) {
+    char command[256];
+    // Unsanitized command concatenation
+    sprintf(command, ""cat /var/logs/%s"", filename);
+    system(command);
+}
+"
+SEC-CWE78-035,CWE-78,Safe Sanitize & Validated Execution,0,"
+int run_system_cmd_safe_34(const char *filename) {
+    if (filename == NULL) return -1;
+    // Validate filename characters to prevent command injection
+    for (size_t k = 0; filename[k] != '\0'; k++) {
+        if (!isalnum(filename[k]) && filename[k] != '.' && filename[k] != '_') {
+            return -1; // Reject invalid characters
+        }
+    }
+    char command[256];
+    snprintf(command, sizeof(command), ""cat /var/logs/%s"", filename);
+    return system(command);
+}
+"
+VULN-CWE190-001,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_0(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-001,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_0(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-002,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_1(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-002,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_1(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-003,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_2(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-003,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_2(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-004,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_3(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-004,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_3(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-005,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_4(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-005,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_4(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-006,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_5(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-006,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_5(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-007,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_6(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-007,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_6(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-008,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_7(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-008,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_7(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-009,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_8(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-009,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_8(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-010,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_9(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-010,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_9(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-011,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_10(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-011,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_10(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-012,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_11(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-012,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_11(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-013,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_12(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-013,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_12(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-014,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_13(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-014,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_13(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-015,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_14(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-015,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_14(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-016,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_15(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-016,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_15(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-017,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_16(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-017,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_16(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-018,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_17(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-018,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_17(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-019,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_18(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-019,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_18(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-020,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_19(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-020,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_19(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-021,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_20(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-021,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_20(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-022,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_21(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-022,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_21(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-023,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_22(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-023,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_22(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-024,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_23(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-024,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_23(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-025,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_24(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-025,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_24(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-026,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_25(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-026,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_25(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-027,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_26(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-027,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_26(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-028,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_27(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-028,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_27(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-029,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_28(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-029,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_28(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-030,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_29(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-030,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_29(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-031,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_30(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-031,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_30(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-032,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_31(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-032,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_31(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-033,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_32(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-033,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_32(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-034,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_33(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-034,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_33(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
+VULN-CWE190-035,CWE-190,Integer Overflow in Allocation Calculation,1,"
+void* alloc_grid_unsafe_34(unsigned int width, unsigned int height) {
+    // Arithmetic overflow in width * height without check
+    size_t size = width * height * sizeof(int);
+    return malloc(size);
+}
+"
+SEC-CWE190-035,CWE-190,Checked Integer Multiplication for Safe Allocation,0,"
+void* alloc_grid_safe_34(unsigned int width, unsigned int height) {
+    if (width == 0 || height == 0) return NULL;
+    // Check overflow before multiplication
+    if (width > UINT_MAX / height) return NULL;
+    size_t total_elements = (size_t)width * height;
+    if (total_elements > SIZE_MAX / sizeof(int)) return NULL;
+    return malloc(total_elements * sizeof(int));
+}
+"
